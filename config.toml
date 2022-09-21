@@ -1,4 +1,9 @@
 baseURL = 'http://awesomeedl.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Edward Liao'
 theme = 'diary'
+
+[[menu.main]]
+    url = "/tags"
+    name = "Tags"
+    weight = 1
