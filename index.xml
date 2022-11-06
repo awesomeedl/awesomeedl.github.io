@@ -1,7 +1,8 @@
 <?xml-stylesheet href="/rss.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Edward Liao</title><link>http://awesomeedl.github.io/</link><description>Recent content on Edward Liao</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 29 Sep 2022 15:10:04 +0800</lastBuildDate><atom:link href="http://awesomeedl.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Conway's Game of Life</title><link>http://awesomeedl.github.io/conway_game_of_life/</link><pubDate>Thu, 29 Sep 2022 15:10:04 +0800</pubDate><guid>http://awesomeedl.github.io/conway_game_of_life/</guid><description>Edward Liao http://awesomeedl.github.io/conway_game_of_life/ -&lt;blockquote>
 &lt;p>The &lt;strong>Game of Life&lt;/strong>, also known simply as &lt;strong>Life&lt;/strong>, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine. -- Wikipedia&lt;/p>
 &lt;/blockquote>
-&lt;p>I was introduced to Conway&amp;rsquo;s Game of Life by my college roomate who was also studying computer science. One of the courses taught us about Turing machines, a fascinating concept of what makes a &amp;lsquo;computer&amp;rsquo;. It is both simple and complicated at the same time.&lt;/p>
+&lt;p>I was introduced to Conway&amp;rsquo;s Game of Life by my college roomate who was also studying computer science. During my college study, one of the courses taught us about Turing machines, a fascinating concept of what makes a &amp;lsquo;computer&amp;rsquo;. It is both simple and complicated at the same time. One thing led to another and soon I found myself researching
+&amp;ldquo;turing complete languages&amp;rdquo;, and Conway&amp;rsquo;s game of life immediately stood out as one of if not the most interesting one.&lt;/p>
 &lt;p>The entire simulation can be summarized by the following rules:&lt;/p>
 &lt;blockquote>
 &lt;ol>
@@ -28,7 +29,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A remarkably simple set of rules create such complex behaviors.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="conway_gif.gif" alt="Game_Of_Life">&lt;/p>
+&lt;p>A remarkably simple set of rules create such complex behaviors.&lt;/p>
 - http://awesomeedl.github.io/conway_game_of_life/ -</description></item><item><title>Behind The Scenes - My Personal Blog</title><link>http://awesomeedl.github.io/hugo/</link><pubDate>Wed, 21 Sep 2022 15:00:56 +0800</pubDate><guid>http://awesomeedl.github.io/hugo/</guid><description>Edward Liao http://awesomeedl.github.io/hugo/ -&lt;p>I have always wanted a centralized place to store and display all my projects, discoveries, and stories.
 I know for a fact that I needed a static website to do this. However, I wasn&amp;rsquo;t too keen on writing all the HTML and CSS myself, it felt tedious.I also didn&amp;rsquo;t want to mess with all the JavaScript frontend libraries, as they are way too overkill and time consuming to learn.&lt;/p>
 &lt;p>I stumbled upon the concept of a &amp;ldquo;static site generator&amp;rdquo; recently, and it blew my mind how well it fits my need - I just need to provide the content, and it will generate all the files needed for hosting the website! How neat!&lt;/p>
