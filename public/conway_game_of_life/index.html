@@ -250,7 +250,8 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                     <blockquote>
 <p>The <strong>Game of Life</strong>, also known simply as <strong>Life</strong>, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine. -- Wikipedia</p>
 </blockquote>
-<p>I was introduced to Conway&rsquo;s Game of Life by my college roomate who was also studying computer science. One of the courses taught us about Turing machines, a fascinating concept of what makes a &lsquo;computer&rsquo;. It is both simple and complicated at the same time.</p>
+<p>I was introduced to Conway&rsquo;s Game of Life by my college roomate who was also studying computer science. During my college study, one of the courses taught us about Turing machines, a fascinating concept of what makes a &lsquo;computer&rsquo;. It is both simple and complicated at the same time. One thing led to another and soon I found myself researching
+&ldquo;turing complete languages&rdquo;, and Conway&rsquo;s game of life immediately stood out as one of if not the most interesting one.</p>
 <p>The entire simulation can be summarized by the following rules:</p>
 <blockquote>
 <ol>
@@ -260,24 +261,25 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 </ol>
 </blockquote>
 <p>In my code, the three rules translate into this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">recalculate</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">x</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">grid</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">y</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">x</span>].<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">y</span><span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">calculateNeighbor</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">x</span>][<span style="color:#a6e22e">y</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) { <span style="color:#75715e">// Alive
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>) {
-</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">x</span>][<span style="color:#a6e22e">y</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// Mark for deletion
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                }  
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">function</span> recalculate() {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span>(<span style="color:#069;font-weight:bold">let</span> x <span style="color:#555">=</span> <span style="color:#f60">0</span>; x <span style="color:#555">&lt;</span> grid.length; x<span style="color:#555">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span>(<span style="color:#069;font-weight:bold">let</span> y <span style="color:#555">=</span> <span style="color:#f60">0</span>; y <span style="color:#555">&lt;</span> grid[x].length; y<span style="color:#555">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">let</span> count <span style="color:#555">=</span> calculateNeighbor(x, y);
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">if</span>(grid[x][y][<span style="color:#f60">0</span>] <span style="color:#555">===</span> <span style="color:#f60">1</span>) { <span style="color:#09f;font-style:italic">// Alive
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>                <span style="color:#069;font-weight:bold">if</span> (count <span style="color:#555">&lt;</span> <span style="color:#f60">2</span> <span style="color:#555">||</span> count <span style="color:#555">&gt;</span> <span style="color:#f60">3</span>) {
+</span></span><span style="display:flex;"><span>                    grid[x][y][<span style="color:#f60">1</span>] <span style="color:#555">=</span> <span style="color:#f60">0</span>; <span style="color:#09f;font-style:italic">// Mark for deletion
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>                }  
 </span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// Dead
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">count</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>) {
-</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">grid</span>[<span style="color:#a6e22e">x</span>][<span style="color:#a6e22e">y</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// Mark for creation
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                }
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">else</span> { <span style="color:#09f;font-style:italic">// Dead
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>                <span style="color:#069;font-weight:bold">if</span>(count <span style="color:#555">===</span> <span style="color:#f60">3</span>) {
+</span></span><span style="display:flex;"><span>                    grid[x][y][<span style="color:#f60">1</span>] <span style="color:#555">=</span> <span style="color:#f60">1</span>; <span style="color:#09f;font-style:italic">// Mark for creation
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>                }
 </span></span><span style="display:flex;"><span>            }
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>A remarkably simple set of rules create such complex behaviors.</p>
+</span></span></code></pre></div><p><img src="conway_gif.gif" alt="Game_Of_Life"></p>
+<p>A remarkably simple set of rules create such complex behaviors.</p>
 
                     
                     <HR width="100%" id="EOF">
