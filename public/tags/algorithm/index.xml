@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on Edward Liao</title>
+    <link>http://awesomeedl.github.io/tags/algorithm/</link>
+    <description>Recent content in Algorithm on Edward Liao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Sep 2022 15:10:04 +0800</lastBuildDate><atom:link href="http://awesomeedl.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conway&#39;s Game of Life</title>
+      <link>http://awesomeedl.github.io/conway_game_of_life/</link>
+      <pubDate>Thu, 29 Sep 2022 15:10:04 +0800</pubDate>
+      
+      <guid>http://awesomeedl.github.io/conway_game_of_life/</guid>
+      <description>The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine.</description>
+    </item>
+    
+  </channel>
+</rss>

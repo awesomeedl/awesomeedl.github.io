@@ -7,3 +7,7 @@ theme = 'diary'
     url = "/tags"
     name = "Tags"
     weight = 1
+
+[markup]
+  [markup.highlight]
+    style = 'manni'

@@ -1,0 +1,73 @@
+<?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Edward Liao</title>
+    <link>http://awesomeedl.github.io/</link>
+    <description>Recent content on Edward Liao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Sep 2022 15:10:04 +0800</lastBuildDate>
+    
+        <atom:link href="http://awesomeedl.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Conway&#39;s Game of Life</title>
+        <link>http://awesomeedl.github.io/conway_game_of_life/</link>
+        <pubDate>Thu, 29 Sep 2022 15:10:04 +0800</pubDate>
+        
+        <guid>http://awesomeedl.github.io/conway_game_of_life/</guid>
+        <description>Edward Liao http://awesomeedl.github.io/conway_game_of_life/ -&lt;blockquote&gt;
+&lt;p&gt;The &lt;strong&gt;Game of Life&lt;/strong&gt;, also known simply as &lt;strong&gt;Life&lt;/strong&gt;, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine. -- Wikipedia&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I was introduced to Conway&amp;rsquo;s Game of Life by my college roomate who was also studying computer science. One of the courses taught us about Turing machines, a fascinating concept of what makes a &amp;lsquo;computer&amp;rsquo;. It is both simple and complicated at the same time.&lt;/p&gt;
+&lt;p&gt;The entire simulation can be summarized by the following rules:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Any live cell with two or three live neighbours survives.&lt;/li&gt;
+&lt;li&gt;Any dead cell with three live neighbours becomes a live cell.&lt;/li&gt;
+&lt;li&gt;All other live cells die in the next generation. Similarly, all other dead cells stay dead.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In my code, the three rules translate into this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;recalculate&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;].&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;calculateNeighbor&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) { &lt;span style=&#34;color:#75715e&#34;&gt;// Alive
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// Mark for deletion
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                }  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; { &lt;span style=&#34;color:#75715e&#34;&gt;// Dead
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#a6e22e&#34;&gt;grid&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;][&lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// Mark for creation
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A remarkably simple set of rules create such complex behaviors.&lt;/p&gt;
+- http://awesomeedl.github.io/conway_game_of_life/ - </description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Behind The Scenes - My Personal Blog</title>
+        <link>http://awesomeedl.github.io/hugo/</link>
+        <pubDate>Wed, 21 Sep 2022 15:00:56 +0800</pubDate>
+        
+        <guid>http://awesomeedl.github.io/hugo/</guid>
+        <description>Edward Liao http://awesomeedl.github.io/hugo/ -&lt;p&gt;I have always wanted a centralized place to store and display all my projects, discoveries, and stories. 
+I know for a fact that I needed a static website to do this. However, I wasn&amp;rsquo;t too keen on writing all the HTML and CSS myself, it felt tedious.I also didn&amp;rsquo;t want to mess with all the JavaScript frontend libraries, as they are way too overkill and time consuming to learn.&lt;/p&gt;
+&lt;p&gt;I stumbled upon the concept of a &amp;ldquo;static site generator&amp;rdquo; recently, and it blew my mind how well it fits my need - I just need to provide the content, and it will generate all the files needed for hosting the website! How neat!&lt;/p&gt;
+&lt;p&gt;I settled on this specific site generator called &amp;ldquo;Hugo&amp;rdquo;, which is what I used to build this blog. It reads content written in Markdown (which is a lot easier then writing HTML and CSS) and generate the entire website according to a predefined template, which Hugo calls a &amp;ldquo;theme&amp;rdquo;. It also claims to be the fastest site generator, a nice little bonus.&lt;/p&gt;
+&lt;p&gt;Now that I have the platform, I will start posting some of my past projects onto here, so stay tuned!&lt;/p&gt;
+- http://awesomeedl.github.io/hugo/ - </description>
+        </item>
+    
+    
+  </channel>
+</rss> 

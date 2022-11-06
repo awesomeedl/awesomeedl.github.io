@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web development on Edward Liao</title>
+    <link>http://awesomeedl.github.io/tags/web-development/</link>
+    <description>Recent content in Web development on Edward Liao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Sep 2022 15:00:56 +0800</lastBuildDate><atom:link href="http://awesomeedl.github.io/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Behind The Scenes - My Personal Blog</title>
+      <link>http://awesomeedl.github.io/hugo/</link>
+      <pubDate>Wed, 21 Sep 2022 15:00:56 +0800</pubDate>
+      
+      <guid>http://awesomeedl.github.io/hugo/</guid>
+      <description>I have always wanted a centralized place to store and display all my projects, discoveries, and stories. I know for a fact that I needed a static website to do this. However, I wasn&amp;rsquo;t too keen on writing all the HTML and CSS myself, it felt tedious.I also didn&amp;rsquo;t want to mess with all the JavaScript frontend libraries, as they are way too overkill and time consuming to learn.
+I stumbled upon the concept of a &amp;ldquo;static site generator&amp;rdquo; recently, and it blew my mind how well it fits my need - I just need to provide the content, and it will generate all the files needed for hosting the website!</description>
+    </item>
+    
+  </channel>
+</rss>
