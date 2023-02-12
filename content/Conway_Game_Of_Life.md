@@ -39,7 +39,7 @@ function recalculate() {
 }
 ```
 
-![Game_Of_Life](conway_gif.gif)
+![Game_Of_Life](/conway-gif.gif)
 
 A remarkably simple set of rules create such complex behaviors.
 
