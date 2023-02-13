@@ -3,7 +3,7 @@ title: "Behind The Scenes - My Personal Blog"
 date: 2022-09-21T15:00:56+08:00
 description: "The process of how I created this blog"
 featured_image: "image.svg"
-tags: ["Web development", "Static website", "Static site generator"]
+tags: ["Web Development", "Static Site Generator"]
 ---
 
 I have always wanted a centralized place to store and display all my projects, discoveries, and stories. 

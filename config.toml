@@ -16,4 +16,5 @@ theme = 'diary'
 
 [markup]
   [markup.highlight]
-    style = 'manni'
+    style = 'nord'
+

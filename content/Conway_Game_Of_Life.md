@@ -2,11 +2,11 @@
 title: "Conway's Game of Life"
 date: 2022-09-29T15:10:04+08:00
 description: "Recreation of the famous simulation using PIXI.js"
-featured_image:
-tags: ['Algorithm', 'Game', 'Simulation', 'Computer Science', 'Turing machine']
+featured_image: "conway-gif.gif"
+tags: ['Algorithm', 'Game Development', 'Simulation', 'Turing Machine']
 ---
 
-> The **Game of Life**, also known simply as **Life**, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine. \-\- Wikipedia
+> "The **Game of Life** ... ... is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine." \-\- Wikipedia
 
 I was introduced to Conway's Game of Life by my college roomate who was also studying computer science. During my college study, one of the courses taught us about Turing machines, a fascinating concept of what makes a 'computer'. It is both simple and complicated at the same time. One thing led to another and soon I found myself researching
 "turing complete languages", and Conway's game of life immediately stood out as one of if not the most interesting one. 
@@ -38,8 +38,6 @@ function recalculate() {
     }
 }
 ```
-
-![Game_Of_Life](/conway-gif.gif)
 
 A remarkably simple set of rules create such complex behaviors.
 
