@@ -8,6 +8,12 @@ theme = 'diary'
     name = "Tags"
     weight = 1
 
+[[menu.main]]
+  url = "/about"
+  name = "About"
+  weight = 2
+
+
 [markup]
   [markup.highlight]
     style = 'manni'
