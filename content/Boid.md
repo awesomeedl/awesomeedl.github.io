@@ -2,7 +2,7 @@
 title: "Boids: The Flocking Algorithm"
 date: 2023-02-15T15:30:25+08:00
 description: "How simple rules allow complex behaviors to emerge"
-tags: ['Algorithm, 'Simulation']
+tags: ['Algorithm', 'Simulation']
 draft: true
 ---
 
